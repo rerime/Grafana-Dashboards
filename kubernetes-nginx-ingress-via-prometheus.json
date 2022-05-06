@@ -1084,7 +1084,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(increase(nginx_ingress_controller_requests{ controller_class=~\"$controller_class\", ingress=~\"$ingress\", namespace=~\"$namespace\", controller_pod=~\"$pod\"}[$__interval])) by (status)",
+          "expr": "sum(increase(nginx_ingress_controller_requests{ controller_class=~\"$controller_class\", ingress=~\"$ingress\", namespace=~\"$namespace\", controller_pod=~\"$pod\"}[$__interval])) by (status) > 0",
           "format": "time_series",
           "interval": "2m",
           "intervalFactor": 1,
